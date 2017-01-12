@@ -3,6 +3,10 @@ you can create shortcuts in the command line to open stuff by adding things to t
 ls -a   # this will show everything, whereas  ls   does not
  even hidden directories or files (they start with a '.'), such as git files that hold repository history
 
+in a directory, type  git init  to create the .git file and make it a git repository
+
+git status   is a command that you should run frequently, it lets you know what files have changed since the last commit, and lets you know which branch you are on
+
 mkdir is make a folder
 
 find *keyword*
