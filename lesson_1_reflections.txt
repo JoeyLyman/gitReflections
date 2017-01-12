@@ -1,0 +1,77 @@
+you can create shortcuts in the command line to open stuff by adding things to the .bash_profile in the home directory
+
+ls -a   # this will show everything, whereas  ls   does not
+ even hidden directories or files (they start with a '.'), such as git files that hold repository history
+
+mkdir is make a folder
+
+find *keyword*
+
+pwd  # print working directory
+ls # list stuff
+diff -u  &&  git diff   do the same thing, but slightly different format i think
+
+git clone  # copy an entire repository
+git checkout # temporarily reset all files in a directory to the state at the time of a specific commit
+git log  or  git log --stat # show commits made in this repository
+press Q to leave log
+
+open filename   with open file or URL, or can use nano to open as text in this command space, or subl will open with sublime
+
+octopus is a strategy used by git to combine different versions of code together
+
+HEAD is what Git calls the commit you are currently working on; you can detach a HEAD by switching to a previous commit; this is not a bad thing, but git will notify you to let yo know
+
+git checkout - temporarily change files back to how they were at the time of a commit
+git checkout commitID
+
+in the Finder GUI, command+shift+H gets you to the home directory
+
+mv Directory/file newfilename.extension
+
+-----------------
+
+How did viewing a diff between two versions of a file help you see the bug that
+was introduced?
+
+    It shows what has been added with a '+' and what has been taken out with a '-'
+
+    Just type  diff -u oldfilename newfilename
+
+How could having easy access to the entire history of a file make you a more
+efficient programmer in the long term?
+
+    See edits or revert ot old stuff
+
+What do you think are the pros and cons of manually choosing when to create a
+commit, like you do in Git, vs having versions automatically saved, like Google
+docs does?
+
+    You can revert back to old stuff if new stuff dont work.
+	 You also get to logically separate commits, so when a certain
+	 thing is changed or a bug is fixed, the two versions are right
+	 before trying to fix the bug, and right after
+
+
+Why do you think some version control systems, like Git, allow saving multiple
+files in one commit, while others, like Google Docs, treat each file separately?
+
+    Cuz with Git, there are interdependent files, whereas with google docs, 
+	they are often separate in purpose.  While programming, a function
+	may be declared in one file and called in another, it is important
+	to have commits bring the whole repository of files, so that you can 
+	organize how each file changed after each logical change of program
+	function
+
+How can you use the commands git log and git diff to view the history of files?
+
+    Git log will show all the different commits, their changes and the messages, while git diff will show the specific changes between two files.  Pressing 'Q' after the git log is shown will get you back to the command line, and git log --stat will give some more information than just git log.
+
+How might using version control make you more confident to make changes that
+could break something?
+
+    You can be completely confident that you can revert to an older version, while also being able to easily keep track of every single change that you make since a version/commit.  You can also be confident in some pretty huge changes in the architecture without fear of breaking the entire project and trying to make it work again.  You can rethink the entire code base.  You can explore such a large space of things to try, easily.
+
+Now that you have your workspace set up, what do you want to try using Git for?
+
+    FUCKING LOCALZOWN
