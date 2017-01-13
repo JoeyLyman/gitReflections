@@ -8,5 +8,7 @@ git remote -v  # v stands for verbose, and so git will be more verbose and show 
 
 git push <name of remote> <name of local branch>  # this takes two arguments, where you would like to send the stuff and what branch you would like to send
 
-
+When would you want to use a remote repository rather than keeping all your work local?
+  
+    when you want to collaborate with someone else,  or if you work from multiple computers.  Or to protect your work, or share it with others
 
