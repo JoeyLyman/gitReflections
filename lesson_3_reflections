@@ -8,7 +8,48 @@ git remote -v  # v stands for verbose, and so git will be more verbose and show 
 
 git push <name of remote> <name of local branch>  # this takes two arguments, where you would like to send the stuff and what branch you would like to send
 
+git pull <name of remote> <name of remote branch>
+
+Forking is a lot like cloning, it is just a clone that GitHub makes for you on their own machines.  Use this if you want to use someone elses repository, but then go in your own direction with it.  It will give them credit and you can go in whatever direction you want.
+
+origin/master (remote/branch) this is a locally stored memory of whatever the last thing the local remembers the remote to have last been
+
+PULL REQUEST would be better called a 'merge request'. I do a pull request because i want the owner to pull my commit into some other branch, ie the master.  
+
+if there is a pull request, if you git push the branch again that has the edits, then it will update the pull request
+
+What if there are changes on the remote and the local branch?  Can you merge them just like you merge branches locally?
+
+	git fetch  # this will make a new branch 'origin/master' (origin/master is the local copy of the remote branch, and you local always has one, it is updated whenever there is a pull or push also) locally, so that you can see what has been updating, while you still have 'master' locally, and then you dont have to combine them immediately.  Say you were getting on an airplane and wanted to get the updates, but then work locally.  You could pull the stuff, then use git log and git diff to see what has been changed.
+
+	Then you could git merge the two; these two steps are exactly what happens when you git pull.
+
+	git pull origin master = git fetch origin '+' git merge master origin/master
+
+	so you gotta merge the stuff then push the merged version back to github
+
+if you clone a repository, github automatically sets up a remote to the place that you cloned from.
+
 When would you want to use a remote repository rather than keeping all your work local?
   
     when you want to collaborate with someone else,  or if you work from multiple computers.  Or to protect your work, or share it with others
+
+Why might you want to always pull changes manually rather than having Git automatically stay up-to-date with your remote repository?
+
+	Because you may not agree with those changes, or you may be working on a different version, or your local code is not ready for those changes, or things would just be moving too fast.  You have more control when it is manual
+
+Describe the differences between forks, clones, and branches. When would you use one instead of another?
+
+	Forks are like clones on github, and you can clone anyones public repos.  Branches are for variations in files in your repository, and clones are for bringing a repository from github down to your local directory.
+
+What is the benefit of having a copy of the last known state of the remote stored locally?
+
+	So that you know how many commits you are ahead of it when you git status.  So that you know what you'll be changing when you push.  So that you know what other people have been working with. more..
+
+How would you collaborate without using Git or GitHub? What would be easier, and what would be harder?
+
+	File sharing sites or email stuff.  Pass stuff around on memory sticks. It'd suck.
+
+	
+
 
