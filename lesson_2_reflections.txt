@@ -1,4 +1,44 @@
-git add <filename> to add stuff to the staging area (the chunk of stuff that you can then commit)
+git add <filename> #to add stuff to the staging area (the chunk of stuff that you can then commit)
+
+git diff #(without anything after) will show the difference between the working directory and the staging area
+
+git diff --staged   #this will show whats different between the staging area and the repository; i.e., imagine if you added something to the staging area but its not actually different from the repository, then it wouldn't show
+
+git reset --hard   #will reset everything in staging area and working directory, CANNOT UNDO!
+
+git checkout master   # leave the detached HEAD stage
+git checkout <branch name>  # checkout a branch
+
+git branch  # to view branches
+
+git branch <branch name>  # creates a new branch
+
+remote branch is one that someone else created
+
+git log --graph
+git log --graph --oneline #output shorter and easier to see
+git log --graph --oneline <branch name> <branch name> # say which branches you would like to visualize
+
+if you go to an older commit, make some commits, then checkout somewhere else, you will lose those commits.  To retain those commits, create another branch like so:
+git checkout -b <newBranchName>  # this is the same as running these two commands:
+get branch <newBranchName> # and
+get checkout <newBranchName>
+
+when you MERGE two branches, you can get rid of one branch name.  Like if you are merging experimental1 INTO master, you no longer have the experimental1 named branch, it becomes part of master.  Then when you git log, all of the commits from the master and the experimental1 branch will be included and sorted by timestamp
+
+git branch -d <branchName>   # you can do this to the branch name merged into your masterer branch; this will not delete the commits in the branch, it will only delete the label
+
+git merge <mainBranchName> <branchName> "message" # dont need the message if you are linked to a text editor that will pop up after you press return
+make sure you have the final branch checked out!
+
+git show <commitID>  # this will show the changes made compared to the commit's parent.  This is especially helpful when you merged some branches, and in git log it is not obvious which commits are whichs' parents, cuz they are sorted by timestamp.  git diff will still show differences in the commits, but it will show lots, so git show will be more clear in this case
+
+If there is a merge conflict, Git will break the section into 3 parts:
+HEAD: which is your code from the branch that is checked out; can search for it with command+f "<<<<<<<<<<"
+common ancestors: this is from the last common commit the branches shared
+name of merging branch (i.e. master): this is what it looks like
+
+git log -n1 # shows the most recent commit. 2 would show the 2 most recent etc.
 
 What happens when you initialize a repository? Why do you need to do it?
 
@@ -9,16 +49,26 @@ What value do you think it offers?
 
 	The staging area is a special place where you can put stuff and have control over what gets committed.  It lets you stay organized and have lots of control.  The repository is like a history, and the working directory is like everything you got right now.  The staging area is the interface between whats going on and changing the working directory and what you actually want to put down in history.
 
-How can you use the staging area to make sure you have one commit per logical
-change?
+How can you use the staging area to make sure you have one commit per logical change?
 
-What are some situations when branches would be helpful in keeping your history
-organized? How would branches help?
+	Even if you make a couple changes, you can commit them separately by adding some files to the staging area, committing them, then doing it again for files/changes that are logically different.  It helps you stay organized and keep things logically separate.
+
+What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+	
+	When creating variations on a product, or when trying out new experimental stuff, and you want to make sure not to mess up the current best working master.  Or when multiple people are working on multiple different things, they can stay in their flow.
+
+	Any time you are moving on to a new piece of work, doing something different.  Context switching.  Compartmentalize.  Master, production work, and full experimental work.  Or even good for when you are collaborating with yourself and you get bored of workingo on a feature, you can go and work on another feature.
+
+	New branch for every feature or bug fix.
 
 How do the diagrams help you visualize the branch structure?
 
-What is the result of merging two branches together? Why do we represent it in
-the diagram the way we do?
+	They show you what commits are on what branches,
 
-What are the pros and cons of Gitâ€™s automatic merging vs. always doing merges
-manually?
+What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+	
+	Every line added is added in the final merge, and every line deleted is deleted in the final merge.  We represent it like that in the diagram to shop process and to for understanding of the files, and organization of the development.
+
+What are the pros and cons of Gitâ€™s automatic merging vs. always doing merges manually?
+
+	It is extremely helpful to point out conflicts and to easily merge stuff without any conflicts.  Maybe there are some times tho when it would get messed up auto merging, and you gotta clean it up.  I am not sure

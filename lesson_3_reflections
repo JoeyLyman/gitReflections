@@ -1,0 +1,12 @@
+git remote  # just like you can use git branch to view and create branches, you can use git remote to view and create remotes.  Remotes are directories on github
+
+if you only have one remote, it is standard to name it 'origin'
+
+git remote add origin <URL> # url can be found after making a repository on github or other version control site
+
+git remote -v  # v stands for verbose, and so git will be more verbose and show more information.  You can use this to check the URL and see if you entered it correctly.  Fetch says where you would fetch data from, and push says where you would push data to
+
+git push <name of remote> <name of local branch>  # this takes two arguments, where you would like to send the stuff and what branch you would like to send
+
+
+
